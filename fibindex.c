@@ -41,10 +41,6 @@ unsigned int calc_fib_index(unsigned int user_int)
 	if (0 == user_int) {
 		fib_bool = true;
 		return index;
-	} else if (1 == user_int) {
-		fib_bool = true;
-		index = 1;
-		return index;
 	}
 
 	for (index = 1; index > 0; index++) {
@@ -53,14 +49,11 @@ unsigned int calc_fib_index(unsigned int user_int)
 			fib_bool = true;
 			return index;
 			break;
-		} 
-
-		fib_result = current_fib_number + previous_fib_number;
-
-		if (fib_result > user_int) {
+		} else if (fib_result > user_int) {
 			break;
 		}
 
+		fib_result = current_fib_number + previous_fib_number;
 		previous_fib_number = current_fib_number;
 		current_fib_number = fib_result;
 	}
